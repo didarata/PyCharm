@@ -1,9 +1,19 @@
-n = int(input())
-odd_sum = 0
+number = int(input())
+
 even_sum = 0
+odd_sum = 0
 
-for number in range (0, n + 1, 2):
-    value = int(input())
-    odd_sum += value
+for num in range(number):
+    current_number = int(input())
 
-print(odd_sum)
+    if num % 2 == 0:
+        even_sum += current_number
+    else:
+        odd_sum += current_number
+
+if odd_sum == even_sum:
+    print('Yes')
+    print(f'Sum = {even_sum}')
+else:
+    print('No')
+    print(f'Diff = {abs(odd_sum - even_sum)}')
