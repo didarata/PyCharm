@@ -14,3 +14,4 @@ for i in range(judges):
 print(starting_points)
 
 gastia = 0
+baba = 0
