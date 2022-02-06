@@ -1,4 +1,4 @@
-examp_students = int(input())
+zexamp_students = int(input())
 
 d = 0
 c = 0
