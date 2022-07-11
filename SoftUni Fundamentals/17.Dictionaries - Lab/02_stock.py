@@ -8,3 +8,13 @@ for product in products_to_search:
         print(f'Sorry, we don\'t have {product}')
     else:
         print(f'We have {inventory_products[product]} of {product} left')
+
+# gold
+# 155
+# silver
+# 10
+# copper
+# 17
+# gold
+# 15
+# stop

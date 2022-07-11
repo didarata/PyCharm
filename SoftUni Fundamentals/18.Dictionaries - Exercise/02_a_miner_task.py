@@ -10,3 +10,21 @@ while True:
 for resource, quantity in resources.items():
     print(f"{resource} -> {quantity}")
 
+
+# gold
+# 155
+# silver
+# 10
+# copper
+# 17
+# gold
+# 15
+# stop
+
+# Gold
+# 155
+# Silver
+# 10
+# Copper
+# 17
+# stop

@@ -32,3 +32,9 @@ for id, student in students_file.items():
 # name_of_course = command[0].replace("_", " ")
 # for current_id, current_name in students[name_of_course].items():
 #     print(f"{current_name} - {current_id}")
+
+# Alex:6:programming basics
+# Maria:7:programming basics
+# Kaloyan:9:advanced
+# Todor:10:fundamentals
+# programming_basics
