@@ -1,37 +1,42 @@
-def move(number_of_letters):
-    for letters in range(number_of_letters):
-        letter = decrypted_message.pop(0)
-        decrypted_message.append(letter)
-
-
-def insert(index, value):
-    if int(index) > len(decrypted_message):
-        decrypted_message.append(value)
-    for i in range(len(decrypted_message)):
-        if i == int(index):
-            decrypted_message.insert(i, value)
-
-
-def change_all(substring, replacement):
-    for index in range(len(decrypted_message)):
-        if decrypted_message[index] == substring:
-            decrypted_message[index] = replacement
-
-
 encrypted_message = input()
-decrypted_message = list(encrypted_message)
-command = input().split('|')
 
-while command[0] != "Decode":
+data = input()
 
-    if command[0] == "Move":
-        move(int(command[1]))
+
+# TODO refactor the code in ifs to use functions
+
+while not data == "Decode":
+    command = data.split("|")
+    if command[0] == "ChangeAll":
+        replace = command[1]
+        replace_with = command[2]
+        encrypted_message = encrypted_message.replace(replace, replace_with)
     elif command[0] == "Insert":
-        insert(command[1], command[2])
-    elif command[0] == "ChangeAll":
-        change_all(command[1], command[2])
+        index = int(command[1])
+        value = command[2]
+        first_part = encrypted_message[:index]
+        second_part = encrypted_message[index:]
+        encrypted_message = first_part + value + second_part
+    elif command[0] == "Move":
+        n_chars = int(command[1])
+        chars_to_move = encrypted_message[:n_chars]
+        first_part = encrypted_message[n_chars:]
+        encrypted_message = first_part + chars_to_move
+    data = input()
 
-    command = input().split('|')
+print(f"The decrypted message is: {encrypted_message}")
 
-output =''.join(decrypted_message)
-print(f"The decrypted message is: {output}")
+
+
+# owyouh
+# Move|2
+# Move|3
+# Insert|3|are
+# Insert|9|?
+# Decode
+
+# zzHe
+# ChangeAll|z|l
+# Insert|2|o
+# Move|3
+# Decode
