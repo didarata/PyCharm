@@ -7,13 +7,10 @@ matches = re.finditer(pattern, text)
 matches_threshold = re.findall(pattern_threshold, text)
 
 cool_emojis = {}
-threshold = 0
+threshold = 1
 
 for digit in matches_threshold:
-    if threshold == 0:
-        threshold += int(digit)
-    else:
-        threshold *= int(digit)
+    threshold *= int(digit)
 
 current_count = 0
 
