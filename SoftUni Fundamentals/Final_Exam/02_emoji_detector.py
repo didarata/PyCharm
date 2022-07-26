@@ -27,3 +27,4 @@ print(f'{len(cool_emojis)} emojis found in the text. The cool ones are:')
 for key, values in cool_emojis.items():
     if values >= threshold:
         print(key)
+
