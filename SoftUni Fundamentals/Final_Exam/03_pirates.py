@@ -21,3 +21,5 @@ while command[0] != "End":
     pass
 
     command = input().split("=>")
+
+test one two targeted_cities
