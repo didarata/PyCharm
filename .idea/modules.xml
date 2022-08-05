@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SoftUni Fundamentals/Django_Project/.idea/Django_Project.iml" filepath="$PROJECT_DIR$/SoftUni Fundamentals/Django_Project/.idea/Django_Project.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/PyCharm.iml" filepath="$PROJECT_DIR$/.idea/PyCharm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/SoftUni.iml" filepath="$PROJECT_DIR$/.idea/SoftUni.iml" />
     </modules>
   </component>
 </project>
