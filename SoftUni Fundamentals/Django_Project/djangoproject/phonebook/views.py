@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from djangoproject.phonebook.models import Contact
 
+
 def create_contact(request):
     name = request.POST.get('name')
     number = request.POST.get('number')
@@ -13,4 +14,6 @@ def create_contact(request):
 
 
 def landing_page(request):
-    return render(request, 'phonebook/index.html')
+    contact = Contact.objects.all()
+    context = {'contacts': contact}
+    return render(request, 'phonebook/index.html', context)
