@@ -1,15 +1,24 @@
-players = input().split()
-toss = int(input())
+from collections import deque
 
-counter = 1
+players_string = input()
+tosses_count = int(input())
 
-while len(players) != 1:
-    for index in range(len(players)):
-        if counter == toss:
-            player_removed = players.pop(counter)
-            print(f"Removed {player_removed}")
-            counter = 1
-        counter += 1
+player = deque(players_string.split(" "))
+current_toss = 0
+
+while len(player) > 1:
+    current_toss += 1
+    current_player = player.popleft()
+
+    if current_toss == tosses_count:
+        current_toss = 0
+        print(f"Removed {current_player}")
+
+    else:
+        player.append(current_player)
+
+winner = player.popleft()
+print(f"Last is {winner}")
 
 
 # Tracy Emily Daniel

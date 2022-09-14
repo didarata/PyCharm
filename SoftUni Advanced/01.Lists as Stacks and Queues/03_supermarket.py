@@ -13,3 +13,12 @@ while True:
     else:
         queue.append(command)
 
+# George
+# Peter
+# William
+# Paid
+# Michael
+# Oscar
+# Olivia
+# Linda
+# End
