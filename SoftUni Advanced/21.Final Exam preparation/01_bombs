@@ -1,0 +1,65 @@
+from collections import deque
+from itertools import count
+
+from macpath import join
+
+def is_bombs_pouch_filled(crafted_bombs):
+    for count in crafted_bombs.values():
+        if count < 3:
+            return False
+    return True
+
+
+bomb_effects = deque([int(x) for x in input().split(',')])
+bomb_casing = [int(x) for x in input().split(',')]
+
+bombs_table = {
+    40: 'Datura Bombs',
+    60: 'Cherry Bombs',
+    120: 'Smoke Decoy Bombs'
+}
+
+crafted_bombs = {
+    'Datura Bombs': 0,
+    'Cherry Bombs': 0,
+    'Smoke Decoy Bombs': 0
+}
+
+while bomb_effect and bomb_casing and not is_bombs_pouch_filled(crafted_bombs):
+    bomb_effects = bomb_effects[0]
+    bomb_casing = bomb_casing[-1]
+    result = bomb_effects + bomb_casing
+    
+    if result in bombs_table:
+        bomb_effects.popleft()
+        bomb_casing.pop()
+        bomb_type = bombs_table[result]
+        crafted_bombs[bomb_type] += 1
+    else:
+        bomb_casing[-1] -= 5
+
+if is_bombs_pouch_filled(crafted_bombs):
+    print('Bene! You have successfully filled the bomb pouch!')
+else:
+    print('You don't have enough materials to fill the bomb pouch.')
+
+if bomb_effects:
+    print(f"Bomb Effects: {', '.join([str(x) for x in bomb_effects])}")
+else:
+    print('Bomb Effects: empty')
+
+if bomb_casing:
+    print(f"Bomb Casing: {', '.join([str(x) for x in bomb_casings])}")
+else:
+    print('Bomb Casing: empty')
+
+for bomb, count in sorted(crafted_bombs.items()):
+    print(f'{bomb}: {count}')
+
+
+# 5, 25, 25, 115
+# 5, 15, 25, 35
+
+
+# 30, 40, 5, 55, 50, 100, 110, 35, 40, 35, 100, 80
+# 20, 25, 20, 5, 20, 20, 70, 5, 35, 0, 10
