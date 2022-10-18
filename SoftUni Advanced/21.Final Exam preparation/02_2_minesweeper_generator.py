@@ -18,16 +18,16 @@ def count_neighbour_bombs(game_field, row, col):
         count += 1
     if is_inside(len(game_field), row + 1, col - 1) and game_field[row + 1][col - 1] == "*":
         count += 1
-    if is_inside(len(game_field), row + 1, col - 1) and game_field[row - 1][col + 1] == "*":
+    if is_inside(len(game_field), row - 1, col + 1) and game_field[row - 1][col + 1] == "*":
         count += 1
     if is_inside(len(game_field), row + 1, col + 1) and game_field[row + 1][col + 1] == "*":
         count += 1
-
+    return count
 
 game_field_size = int(input())
 game_field = []
 
-for _ in range(game_field):
+for _ in range(game_field_size):
     game_field.append([0] * game_field_size)
 
 bombs_count = int(input())
@@ -44,7 +44,7 @@ for row in range(game_field_size):
         game_field[row][col] = cell_value
 
 for row in game_field:
-    print(*row, sep="")
+    print(*row, sep=" ")
 
 
 # 4
@@ -59,3 +59,5 @@ for row in game_field:
 # (1, 1)
 # (2, 4)
 # (4, 1)
+
+# https://judge.softuni.org/Contests/Practice/Index/2463#1
