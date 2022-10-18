@@ -1,0 +1,62 @@
+matrix = []
+
+for i in range(6):
+    line = list(input().split())
+    matrix.append(line)
+
+position = input()
+row = int(position[1])
+col = int(position[4])
+
+command = input()
+
+while command != "Stop":
+
+    command_elements = command.split(", ")
+    action = command_elements[0]
+    direction = command_elements[1]
+
+
+    if direction == "up":
+        row -= 1
+
+    if direction == "down":
+        row += 1
+
+    if  direction == "right":
+        col += 1
+    
+    if direction == "left":
+        col -= 1
+
+    if action == "Create":
+        value = command_elements[2]
+        if matrix[row][col] == ".":
+            matrix[row][col] = value
+
+    if action == "Update":
+        value = command_elements[2]
+        if matrix[row][col] != ".":
+            matrix[row][col] = value
+            
+    command = input()
+
+for m_line in matrix:
+    print(" ".joion(m_line))
+
+
+
+# . . . . . .
+# . 6 . . . .
+# . T . D . O
+# . . 10 A . .
+# . 95 . 80 5 .
+# . . P . t .
+# (2, 3)
+# Create, down, o
+# Delete, right
+# Read, up
+# Create, left, 20
+# Update, up, P
+# Stop
+
