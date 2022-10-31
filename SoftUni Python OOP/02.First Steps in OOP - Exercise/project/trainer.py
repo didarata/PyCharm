@@ -25,10 +25,8 @@ class Trainer:
         return f"You have released {pokemon_name}"
 
     def trainer_data(self):
-        result = []
+        result = [f"Pokemon Trainer {self.name}", f"Pokemon count {len(self.pokemons)}"]
 
-        result.append(f"Pokemon Trainer {self.name}")
-        result.append(f"Pokemon count {len(self.pokemons)}")
         [result.append(f"- {p.pokemon_details()}") for p in self.pokemons]
 
         return '\n'.join(result)
